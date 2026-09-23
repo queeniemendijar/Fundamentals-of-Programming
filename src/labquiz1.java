@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 
 public class labquiz1 {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         BufferedReader dataln = new BufferedReader(new InputStreamReader(System.in));
         try {
 
@@ -11,11 +11,7 @@ public class labquiz1 {
             String birthyearInput = dataln.readLine();
             int birthyear = Integer.parseInt(birthyearInput);
 
-            System.out.println("You were born last " + birthyear + ".");
-
-
-
-            System.out.print("You are now " + ( 2026 - birthyear) + "yrs old." );
+            System.out.println("You were born last" + birthyear);
 
         }catch(IOException e) {
 
