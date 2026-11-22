@@ -1,0 +1,26 @@
+public class ArraysProblem1 { // pinaka main class ng program
+
+    public static void main(String[] args) { // simula ng program
+
+        // gumawa ng 1D double array na kayang maglaman ng eksaktong 5 elements
+        double[] temperatures = new double[5]; // Ang "new double[5]" ay nagbibigay ng limang space sa memory
+
+        // lagyan ng value ang bawat index ng array
+        temperatures[0] = 32.5; // Day 1 (index 0)
+        temperatures[1] = 34.0; // Day 2 (index 1)
+        temperatures[2] = 31.8; // Day 3 (index 2)
+        temperatures[3] = 33.2; // Day 4 (index 3)
+        temperatures[4] = 35.1; // Day 5 (index 4)
+
+        // Gamit ang for loop at .length, ipi-print ang bawat temperatura
+        for (int i = 0; i < temperatures.length; i++) { // Magsisimula sa i = 0 hanggang umabot sa length (5)
+            System.out.println("Day " + (i + 1) + ": " + temperatures[i]); // Ipi-print ang araw at ang temperatura nito
+        } // Dito nagtatapos ang for loop
+
+        // Papalitan ang temperatura ng ikatlong araw (index 2) mula 31.8 patungong 32.0
+        temperatures[2] = 32.0; // Ang bagong value ay nakalagay na sa index 2
+
+        // Ipi-print ang na-update na temperatura ng ikatlong araw
+        System.out.println("Updated Day 3: " + temperatures[2]); // Output: Updated Day 3: 32.0
+    } // Dito nagtatapos ang main method
+} // Dito nagtatapos ang class
