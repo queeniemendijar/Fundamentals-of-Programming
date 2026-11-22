@@ -1,0 +1,53 @@
+public class CoffeeShopAnalyzer {
+    public static void main(String[] args) {
+        // 1. ilagay yung arrays
+        int[] weeklySales = {120, 145, 130, 155, 180, 210, 195};
+        String[] daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+
+        // 4. gumawa ng kpya ng sales para sa isang araw sa malinis na paraan
+        System.out.println("--- Daily Sales ---");
+        for (int i = 0; i < weeklySales.length; i++) {
+            // gamitin yung parallel array para i print yung totoong pangalan ng araw
+            System.out.println(daysOfWeek[i] + " sales: " + weeklySales[i]);
+        }
+
+        // kwentahin yung total average at sales
+        int totalSales = 0; // gumamit ka ng enhanced for each loop dito
+        for (int dailySale : weeklySales) {
+            totalSales += dailySale;
+        }
+
+        // mag lagay ng totalSales sa double para ma iwasan yung integer division truncation
+        double averageSales = (double) totalSales / weeklySales.length;
+        System.out.println("\n--- Weekly Summary ---");
+        System.out.println("Total Sales: " + totalSales + " cups");
+        System.out.println("Average Daily Sales: " + averageSales + " cups");
+
+        // Part 4 & Bonus: hanapin yung maximum and minimum sales values
+        int maxSales = weeklySales[0];
+        int minSales = weeklySales[0];
+        // Variables para makita kung anong araw yung best or worst
+        String bestDay = daysOfWeek[0];
+        String worstDay = daysOfWeek[0];
+
+        // umpisahan yung loop sa index 1 dahil gumawa na tayo ng max/min sa index 0
+        for (int i = 1; i < weeklySales.length; i++) {
+            // tingnan yung bagong maximum
+            if (weeklySales[i] > maxSales) {
+                maxSales = weeklySales[i];
+                bestDay = daysOfWeek[i];
+            }
+
+            // tingnan yung bagong minimum
+            if (weeklySales[i] < minSales) {
+                minSales = weeklySales[i];
+                worstDay = daysOfWeek[i];
+            }
+        }
+        // i print mo na
+
+        System.out.println("\n--- Bests and Worsts ---");
+        System.out.println("Best day was " + bestDay + " with " + maxSales + " cups.");
+        System.out.println("Slowest day was " + worstDay + " with " + minSales + " cups.");
+    }
+}
